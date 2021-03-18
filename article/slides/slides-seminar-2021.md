@@ -6,5 +6,6 @@
 
 - Vyborg was part of the autonomous Grand duchy of Finland from 1812 to 1917
 - The city had a large Orthodox minority, of which 90% were Russians
-- most of 
+- Vyborg was a mid-level hub of commerce and migration in the central place system that 
+  connected Finnish countryside to the St. Petersburg
 
