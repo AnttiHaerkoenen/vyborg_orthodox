@@ -27,7 +27,7 @@
 
 # Sources for migration
 
-- Lutheran parish in St. Petersburg for lutherans
+- Lutheran parish in St. Petersburg
 - Poll tax register and parish registers both unreliable due to migration
 
 # Poll tax registers
@@ -48,10 +48,14 @@
 
 - statistical methods for working with time series data
 - common problems:
-* spectral analysis (finding repeating patterns)
-* shift point analysis (finding a point when a chance happens)
-* autoregression models (how much previous observations affect next observation)
-* moving average methods
-* combinations of the above, e.g. ARMA
+    * spectral analysis (finding repeating patterns)
+    * shift point analysis (finding a point when a chance happens)
+    * autoregression models (how much previous observations affect next observation)
+    * moving average methods
+    * combinations of the above, e.g. ARMA
 
 # Fourier transform
+
+# Time series (1)
+
+# Time series (2)

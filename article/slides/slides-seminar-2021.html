@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Antti Härkönen">
+  <meta name="dcterms.date" content="2021-03-24">
+  <title>Missing orthodox population in the poll tax register of Vyborg 1880-1917</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/sky.css" id="theme">
+  <style type="text/css">
+                        .reveal h1 { font-size: 2em; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Missing orthodox population in the poll tax register of Vyborg 1880-1917</h1>
+  <p class="author">Antti Härkönen</p>
+  <p class="date">2021-03-24</p>
+</section>
+
+<section id="introduction" class="title-slide slide level1">
+<h1>Introduction</h1>
+
+</section>
+
+<section id="background" class="title-slide slide level1">
+<h1>Background</h1>
+<ul>
+<li class="fragment">Vyborg was part of the autonomous Grand duchy of Finland from 1812 to 1917</li>
+<li class="fragment">The city had a large Orthodox minority, of which 90% were Russians</li>
+<li class="fragment">Vyborg was a mid-level hub of commerce and migration in the central place system</li>
+<li class="fragment">Vyborg connected Eastern Finland to St. Petersburg</li>
+</ul>
+</section>
+
+<section id="research-problem" class="title-slide slide level1">
+<h1>Research problem</h1>
+<ul>
+<li class="fragment">Original idea to determine change of segregation</li>
+<li class="fragment">Problems with data quality</li>
+<li class="fragment">Determining how much population actually changes necessary</li>
+</ul>
+</section>
+
+<section id="sources" class="title-slide slide level1">
+<h1>Sources</h1>
+
+</section>
+
+<section id="parish-records" class="title-slide slide level1">
+<h1>Parish records</h1>
+<ul>
+<li class="fragment">Most not available</li>
+<li class="fragment">Vyborg health council reports total population by denomination in yearly reports</li>
+<li class="fragment">Only available 1905-</li>
+</ul>
+</section>
+
+<section id="sources-for-migration" class="title-slide slide level1">
+<h1>Sources for migration</h1>
+<ul>
+<li class="fragment">Lutheran parish in St. Petersburg</li>
+<li class="fragment">Poll tax register and parish registers both unreliable due to migration</li>
+</ul>
+</section>
+
+<section id="poll-tax-registers" class="title-slide slide level1">
+<h1>Poll tax registers</h1>
+<ul>
+<li class="fragment">For taxation, also record for voting rights and property ownership</li>
+<li class="fragment">Senate degree in 1878: from 1880 onward poll tax registers should have columns for non-lutherans</li>
+<li class="fragment">Religion recorded until 1920s</li>
+</ul>
+</section>
+
+<section id="problems-with-sources" class="title-slide slide level1">
+<h1>Problems with sources</h1>
+<ul>
+<li class="fragment">Poll tax register numbers for orthodox population are inconsistent</li>
+<li class="fragment">Total numbers of orthodox fluctuate too wildly to be real</li>
+<li class="fragment">Some households with Russian names are marked Orthodox in some years and not in other years</li>
+</ul>
+</section>
+
+<section id="method" class="title-slide slide level1">
+<h1>Method</h1>
+
+</section>
+
+<section id="time-series-analysis" class="title-slide slide level1">
+<h1>Time series analysis</h1>
+<ul>
+<li class="fragment">statistical methods for working with time series data</li>
+<li class="fragment">common problems:
+<ul>
+<li class="fragment">spectral analysis (finding repeating patterns)</li>
+<li class="fragment">shift point analysis (finding a point when a chance happens)</li>
+<li class="fragment">autoregression models (how much previous observations affect next observation)</li>
+<li class="fragment">moving average methods</li>
+<li class="fragment">combinations of the above, e.g. ARMA</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="fourier-transform" class="title-slide slide level1">
+<h1>Fourier transform</h1>
+<img src="../../figures/fourier.png">
+</section>
+
+<section id="time-series-1" class="title-slide slide level1">
+<h1>Time series (1)</h1>
+<img src="../../figures/timeseries1.png">
+</section>
+
+<section id="time-series-2" class="title-slide slide level1">
+<h1>Time series (2)</h1>
+<img src="../../figures/timeseries2.png">
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
