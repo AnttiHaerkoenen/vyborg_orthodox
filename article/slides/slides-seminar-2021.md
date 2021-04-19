@@ -46,13 +46,6 @@
 
 # Time series analysis
 
-Bayesian graphical models have rarely been used in historical demographic research, even though it is potentially very useful.
-The most relevant publication has been [Voutilainen et al. 2020](http://urn.fi/URN:NBN:fi:jyu-202006174250). In this article
-the authors use a graphical model to control the effects of a variety of different problems with the source material.
-They create a novel reconstruction of Finnish population in the Early Modern period, and importantly, the Bayesian methods
-allow the estimation of different uncertainties in the estimations, which is completely novel in Finnish historiography.
-The proper specification of priors is very important in these cases, since the data has a lot of uncertain parts.
-
 - statistical methods for working with time series data
 - common problems:
     * spectral analysis (finding repeating patterns)
@@ -61,15 +54,15 @@ The proper specification of priors is very important in these cases, since the d
     * moving average methods
     * combinations of the above, e.g. ARMA
 
-- linear model approximates real changes suitably well.
+# Bayesian Linear Regression
 
+- linear model approximates real changes suitably well.
 - a basic regression model is used to determine the parameters for the whole orthodox civilian parish of Vyborg
 - the results are parameters describing the smaller orthodox population within the city
 - some years, the number of orthodox Vyborgians living in St. Petersburg is counted and added to the number of the orthodox
 in the summary table of  the poll tax register
-- a binary latent variable $ z $, which equals 1 when the non-resident people are counted in the totals
-
-# Fourier transform
+- a binary latent variable $ z $
+    * equals 1 when the non-resident people are counted in the totals
 
 # Time series of orthodox population
 
@@ -84,6 +77,7 @@ in the summary table of  the poll tax register
 - daft for DAGs
 
 # Results
+
 - 1880-1905
     * no orthodox growth within city
 - 1906-1917
