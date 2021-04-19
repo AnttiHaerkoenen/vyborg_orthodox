@@ -84,6 +84,8 @@ in the summary table of  the poll tax register
 - daft for DAGs
 
 # Results
-
-- growth rate of orthodox parish: 2.3% per annum
-- growth rate of orthodox living in city: 5.1% per annum
+- 1880-1905
+    * no orthodox growth within city
+- 1906-1917
+    * growth rate of orthodox parish: 2.3% per annum
+    * growth rate of orthodox living in city: 5.1% per annum
