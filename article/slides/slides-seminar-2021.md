@@ -56,15 +56,16 @@
 
 # Bayesian Linear Regression
 
-- linear model approximates real changes suitably well.
+- linear model approximates real changes suitably well
 - a basic regression model is used to determine the parameters for the whole orthodox civilian parish of Vyborg
 - the results are parameters describing the smaller orthodox population within the city
-- some years, the number of orthodox Vyborgians living in St. Petersburg is counted and added to the number of the orthodox
-in the summary table of  the poll tax register
+- some years, the orthodox Vyborgians living in St. Petersburg are counted in the number of the orthodox
 - a binary latent variable $ z $
     * equals 1 when the non-resident people are counted in the totals
 
-# Time series of orthodox population
+# Time series of orthodox population (1)
+
+# Time series of orthodox population (2)
 
 # Linear regression
 
