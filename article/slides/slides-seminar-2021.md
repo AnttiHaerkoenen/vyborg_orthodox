@@ -1,6 +1,6 @@
 % Missing orthodox population in the poll tax register of Vyborg 1880-1917
 % Antti Härkönen
-% 2021-04-24
+% 2021-04-21
 
 # Introduction
 
@@ -13,9 +13,9 @@
 
 # Research problem
 
-- Original idea to determine change of segregation
+- Original idea was to determine change of segregation, but...
 - Problems with data quality
-- Determining how much population actually changes necessary
+- Determining how much population actually changes is necessary!
 
 # Sources
 
@@ -42,32 +42,40 @@
 - Total numbers of orthodox fluctuate too wildly to be real
 - Some households with Russian names are marked Orthodox in some years and not in other years
 
+# Time series of orthodox population (1)
+
+# Time series of orthodox population (2)
+
 # Method
 
 # Time series analysis
 
-- statistical methods for working with time series data
-- common problems:
+- Statistical methods for working with time series data
+- Common problems:
     * spectral analysis (finding repeating patterns)
     * shift point analysis (finding a point when a chance happens)
     * autoregression models (how much previous observations affect next observation)
     * moving average methods
     * combinations of the above, e.g. ARMA
 
-# Bayesian Linear Regression
+# Bayesian Linear Regression (1)
 
-- linear model approximates real changes suitably well
-- a basic regression model is used to determine the parameters for the whole orthodox civilian parish of Vyborg
-- the results are parameters describing the smaller orthodox population within the city
-- some years, the orthodox Vyborgians living in St. Petersburg are counted in the number of the orthodox
-- a binary latent variable $ z $
-    * equals 1 when the non-resident people are counted in the totals
+- Linear model approximates real changes suitably well
+- A basic regression model is used to determine the parameters for the whole orthodox civilian parish of Vyborg
+- The results are parameters describing the smaller orthodox population within the city
 
-# Time series of orthodox population (1)
+# Bayesian Linear Regression (2)
 
-# Time series of orthodox population (2)
+- Some years, the orthodox Vyborgians living in St. Petersburg are counted in the number of the orthodox
+- A binary latent variable **z**
+    * **z** is a vector with an element for each year
+    * equals 1 when the non-resident people are counted in the totals, 0 otherwise
+  
+# Full model
 
-# Linear regression
+$$ o_r = N(\mu_{o_r}, \sigma_{o_r}^2) $$
+$$ \mu_{o_r} = \beta_0 + \beta_1 t - o_{ro} \odot z $$
+$$ z \sim Bernoulli(0.5) $$
 
 # Python modules used
 

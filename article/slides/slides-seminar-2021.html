@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Antti Härkönen">
-  <meta name="dcterms.date" content="2021-03-24">
+  <meta name="dcterms.date" content="2021-04-21">
   <title>Missing orthodox population in the poll tax register of Vyborg 1880-1917</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,7 +31,7 @@
 <section id="title-slide">
   <h1 class="title">Missing orthodox population in the poll tax register of Vyborg 1880-1917</h1>
   <p class="author">Antti Härkönen</p>
-  <p class="date">2021-03-24</p>
+  <p class="date">2021-04-21</p>
 </section>
 
 <section id="introduction" class="title-slide slide level1">
@@ -52,9 +52,9 @@
 <section id="research-problem" class="title-slide slide level1">
 <h1>Research problem</h1>
 <ul>
-<li class="fragment">Original idea to determine change of segregation</li>
+<li class="fragment">Original idea was to determine change of segregation, but…</li>
 <li class="fragment">Problems with data quality</li>
-<li class="fragment">Determining how much population actually changes necessary</li>
+<li class="fragment">Determining how much population actually changes is necessary!</li>
 </ul>
 </section>
 
@@ -98,6 +98,16 @@
 </ul>
 </section>
 
+<section id="time-series-of-orthodox-population-1" class="title-slide slide level1">
+<h1>Time series of orthodox population (1)</h1>
+<img src="../../figures/timeseries1.png">
+</section>
+
+<section id="time-series-of-orthodox-population-2" class="title-slide slide level1">
+<h1>Time series of orthodox population (2)</h1>
+<img src="../../figures/timeseries2.png">
+</section>
+
 <section id="method" class="title-slide slide level1">
 <h1>Method</h1>
 
@@ -106,8 +116,8 @@
 <section id="time-series-analysis" class="title-slide slide level1">
 <h1>Time series analysis</h1>
 <ul>
-<li class="fragment">statistical methods for working with time series data</li>
-<li class="fragment">common problems:
+<li class="fragment">Statistical methods for working with time series data</li>
+<li class="fragment">Common problems:
 <ul>
 <li class="fragment">spectral analysis (finding repeating patterns)</li>
 <li class="fragment">shift point analysis (finding a point when a chance happens)</li>
@@ -118,19 +128,56 @@
 </ul>
 </section>
 
-<section id="fourier-transform" class="title-slide slide level1">
-<h1>Fourier transform</h1>
-<img src="../../figures/fourier.png">
+<section id="bayesian-linear-regression-1" class="title-slide slide level1">
+<h1>Bayesian Linear Regression (1)</h1>
+<ul>
+<li class="fragment">Linear model approximates real changes suitably well</li>
+<li class="fragment">A basic regression model is used to determine the parameters for the whole orthodox civilian parish of Vyborg</li>
+<li class="fragment">The results are parameters describing the smaller orthodox population within the city</li>
+</ul>
 </section>
 
-<section id="time-series-1" class="title-slide slide level1">
-<h1>Time series (1)</h1>
-<img src="../../figures/timeseries1.png">
+<section id="bayesian-linear-regression-2" class="title-slide slide level1">
+<h1>Bayesian Linear Regression (2)</h1>
+<ul>
+<li class="fragment">Some years, the orthodox Vyborgians living in St. Petersburg are counted in the number of the orthodox</li>
+<li class="fragment">A binary latent variable <strong>z</strong>
+<ul>
+<li class="fragment"><strong>z</strong> is a vector with an element for each year</li>
+<li class="fragment">equals 1 when the non-resident people are counted in the totals, 0 otherwise</li>
+</ul></li>
+</ul>
 </section>
 
-<section id="time-series-2" class="title-slide slide level1">
-<h1>Time series (2)</h1>
-<img src="../../figures/timeseries2.png">
+<section id="full-model" class="title-slide slide level1">
+<h1>Full model</h1>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>o</mi><mi>r</mi></msub><mo>=</mo><mi>N</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>μ</mi><msub><mi>o</mi><mi>r</mi></msub></msub><mo>,</mo><msubsup><mi>σ</mi><msub><mi>o</mi><mi>r</mi></msub><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex"> o_r = N(\mu_{o_r}, \sigma_{o_r}^2) </annotation></semantics></math> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><msub><mi>o</mi><mi>r</mi></msub></msub><mo>=</mo><msub><mi>β</mi><mn>0</mn></msub><mo>+</mo><msub><mi>β</mi><mn>1</mn></msub><mi>t</mi><mo>−</mo><msub><mi>o</mi><mrow><mi>r</mi><mi>o</mi></mrow></msub><mo>⊙</mo><mi>z</mi></mrow><annotation encoding="application/x-tex"> \mu_{o_r} = \beta_0 + \beta_1 t - o_{ro} \odot z </annotation></semantics></math> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∼</mo><mi>B</mi><mi>e</mi><mi>r</mi><mi>n</mi><mi>o</mi><mi>u</mi><mi>l</mi><mi>l</mi><mi>i</mi><mo stretchy="false" form="prefix">(</mo><mn>0.5</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex"> z \sim Bernoulli(0.5) </annotation></semantics></math></p>
+</section>
+
+<section id="python-modules-used" class="title-slide slide level1">
+<h1>Python modules used</h1>
+<ul>
+<li class="fragment">pymc3 for specifying Bayesian models</li>
+<li class="fragment">arviz for visualising results of Bayesian computations</li>
+<li class="fragment">pandas and numpy for managing data</li>
+<li class="fragment">matplotlib for plotting</li>
+<li class="fragment">daft for DAGs</li>
+</ul>
+</section>
+
+<section id="results" class="title-slide slide level1">
+<h1>Results</h1>
+<ul>
+<li class="fragment">1880-1905
+<ul>
+<li class="fragment">no orthodox growth within city</li>
+</ul></li>
+<li class="fragment">1906-1917
+<ul>
+<li class="fragment">growth rate of orthodox parish: 2.3% per annum</li>
+<li class="fragment">growth rate of orthodox living in city: 5.1% per annum</li>
+</ul></li>
+</ul>
 </section>
     </div>
   </div>
